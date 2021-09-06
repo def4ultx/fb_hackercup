@@ -1,0 +1,80 @@
+8
+2
+XO
+..
+2
+X.
+.O
+3
+...
+...
+...
+3
+.OX
+X..
+..O
+3
+OXO
+X.X
+OXO
+3
+.XO
+O.X
+XO.
+4
+X...
+.O.O
+.XX.
+O.XO
+5
+OX.OO
+X.XXX
+OXOOO
+OXOOO
+XXXX.package main
+
+import "fmt"
+
+func main() {
+
+	var t int
+	fmt.Scanf("%d", &t)
+
+	for i := 0; i < t; i++ {
+		result := runtest()
+		fmt.Println(result)
+	}
+}
+
+func runtest() int {
+
+	var n int
+
+	fmt.Scanf("%d", &n)
+
+	var (
+		original = make([][]rune, n)
+		filled   = make([][]rune, n)
+	)
+
+	for i := 0; i < n; i++ {
+		original[i] = make([]rune, n)
+		filled[i] = make([]rune, n)
+	}
+
+	for i := 0; i < n; i++ {
+		for j := 0; j < n; j++ {
+
+			var r rune
+			fmt.Scanf("%s", &r)
+
+			original[i][j] = r
+			filled[i][j] = r
+		}
+	}
+
+	fmt.Println(original)
+	fmt.Println(filled)
+
+	return -1
+}
